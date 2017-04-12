@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -75,6 +76,20 @@ public class NormalFilePickActivity extends BaseActivity {
         intent.putExtra(EXTRA_MAX_SELECT_NUM, maxSelectNum);
         intent.putExtra(EXTRA_STUFFIX, mSuffix);
         activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * 启动文件选择
+     * @param fragment
+     * @param maxSelectNum
+     * @param mSuffix
+     * @param requestCode
+     */
+    public static void start(Fragment fragment, int maxSelectNum, String[] mSuffix, int requestCode) {
+        Intent intent = new Intent(fragment.getActivity(), NormalFilePickActivity.class);
+        intent.putExtra(EXTRA_MAX_SELECT_NUM, maxSelectNum);
+        intent.putExtra(EXTRA_STUFFIX, mSuffix);
+        fragment.startActivityForResult(intent, requestCode);
     }
 
     @Override

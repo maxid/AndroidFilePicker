@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -64,13 +65,27 @@ public class VideoPickActivity extends BaseActivity {
      * @param activity
      * @param maxSelectNum 最大选择数量
      * @param isShow       是否展示摄像头
-     * @param requestCode   请求码
+     * @param requestCode  请求码
      */
     public static void start(Activity activity, int maxSelectNum, boolean isShow, int requestCode) {
         Intent intent = new Intent(activity, VideoPickActivity.class);
         intent.putExtra(EXTRA_MAX_SELECT_NUM, maxSelectNum);
         intent.putExtra(EXTRA_SHOW_CAMERA, isShow);
         activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * 启动视频选择
+     * @param fragment
+     * @param maxSelectNum
+     * @param isShow
+     * @param requestCode
+     */
+    public static void start(Fragment fragment, int maxSelectNum, boolean isShow, int requestCode) {
+        Intent intent = new Intent(fragment.getActivity(), VideoPickActivity.class);
+        intent.putExtra(EXTRA_MAX_SELECT_NUM, maxSelectNum);
+        intent.putExtra(EXTRA_SHOW_CAMERA, isShow);
+        fragment.startActivityForResult(intent, requestCode);
     }
 
     @Override

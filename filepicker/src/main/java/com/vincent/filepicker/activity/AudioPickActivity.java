@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -60,13 +61,28 @@ public class AudioPickActivity extends BaseActivity {
      * @param activity
      * @param maxSelectNum   最大选择数量
      * @param isNeedRecorder 是否需要录音
-     * @param requestCode   请求码
+     * @param requestCode    请求码
      */
     public static void start(Activity activity, int maxSelectNum, boolean isNeedRecorder, int requestCode) {
         Intent intent = new Intent(activity, AudioPickActivity.class);
         intent.putExtra(EXTRA_MAX_SELECT_NUM, maxSelectNum);
         intent.putExtra(IS_NEED_RECORDER, isNeedRecorder);
         activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * 启动录音选择
+     *
+     * @param fragment
+     * @param maxSelectNum
+     * @param isNeedRecorder
+     * @param requestCode
+     */
+    public static void start(Fragment fragment, int maxSelectNum, boolean isNeedRecorder, int requestCode) {
+        Intent intent = new Intent(fragment.getActivity(), AudioPickActivity.class);
+        intent.putExtra(EXTRA_MAX_SELECT_NUM, maxSelectNum);
+        intent.putExtra(IS_NEED_RECORDER, isNeedRecorder);
+        fragment.startActivityForResult(intent, requestCode);
     }
 
     @Override

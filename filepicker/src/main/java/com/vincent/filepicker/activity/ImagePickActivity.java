@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -102,6 +103,27 @@ public class ImagePickActivity extends BaseActivity {
         intent.putExtra(EXTRA_ENABLE_PREVIEW, enablePreview);
         intent.putExtra(EXTRA_ENABLE_CROP, enableCrop);
         activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * 启动图片选择页面
+     * @param fragment
+     * @param maxSelectNum
+     * @param mode
+     * @param isShow
+     * @param enablePreview
+     * @param enableCrop
+     * @param requestCode
+     */
+    public static void start(Fragment fragment, int maxSelectNum, int mode, boolean isShow,
+                             boolean enablePreview, boolean enableCrop, int requestCode) {
+        Intent intent = new Intent(fragment.getActivity(), ImagePickActivity.class);
+        intent.putExtra(EXTRA_MAX_SELECT_NUM, maxSelectNum);
+        intent.putExtra(EXTRA_SELECT_MODE, mode);
+        intent.putExtra(EXTRA_SHOW_CAMERA, isShow);
+        intent.putExtra(EXTRA_ENABLE_PREVIEW, enablePreview);
+        intent.putExtra(EXTRA_ENABLE_CROP, enableCrop);
+        fragment.startActivityForResult(intent, requestCode);
     }
 
     @Override
