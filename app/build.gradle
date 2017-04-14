@@ -93,7 +93,7 @@ android {
 
             if ("true".equals(IS_JENKINS)) {
                 timeNow = JENKINS_TIME
-                outDirectory = 'C:/Users/Administrator/Desktop'
+                outDirectory = 'C:/Users/Administrator/Desktop/jenkins'
                 newName = 'filepicker-v' +
                         APP_VERSION + '-' + variant.productFlavors[0].name + timeNow + '-' + variant.buildType.name + '.apk'
             } else {
