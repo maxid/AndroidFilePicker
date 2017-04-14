@@ -1,27 +1,114 @@
 apply plugin: 'com.android.application'
 
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+}
+
+def verCode = 14
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+
+    signingConfigs {
+        signingConfig {
+            keyAlias 'basemodule'
+            keyPassword 'basemodule'
+            storeFile file('C:\\Users\\Administrator\\Documents\\AndroidFilePicker\\basemodule.jks')
+            storePassword 'basemodule'
+        }
+    }
+
     defaultConfig {
         applicationId "com.brilliant.androidfilepicker"
         minSdkVersion 19
         targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        versionCode verCode
+        versionName APP_VERSION
+        resValue("string", 'app_version', APP_VERSION)
+        buildConfigField "boolean", "LEO_DEBUG", "true"
+        buildConfigField 'String', 'API_SERVER_URL', RELEASE_API_SERVER_URL
+        buildConfigField 'String', 'API_SERVER_URL_MALL', RELEASE_API_SERVER_URL_MALL
+        signingConfig signingConfigs.signingConfig
+
     }
     buildTypes {
         release {
-            minifyEnabled false
+            buildConfigField 'String', 'API_SERVER_URL', RELEASE_API_SERVER_URL
+            buildConfigField 'String', 'API_SERVER_URL_MALL', RELEASE_API_SERVER_URL_MALL
+            buildConfigField 'String', 'IM_SERVER_HOST', RELEASE_IM_SERVER_HOST
+            buildConfigField 'int', 'IM_SERVER_PORT', RELEASE_IM_SERVER_PORT
+            buildConfigField "boolean", "LEO_DEBUG", RELEASE_LEO_DEBUG
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            buildConfigField 'String', 'API_SERVER_URL', RELEASE_API_SERVER_URL
+            buildConfigField 'String', 'API_SERVER_URL_MALL', RELEASE_API_SERVER_URL_MALL
+            buildConfigField 'String', 'IM_SERVER_HOST', RELEASE_IM_SERVER_HOST
+            buildConfigField 'int', 'IM_SERVER_PORT', RELEASE_IM_SERVER_PORT
+            buildConfigField "boolean", "LEO_DEBUG", RELEASE_LEO_DEBUG
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "2g"
     }
 
     // 解决 is not translated in "zh" ，防止自动打包失败
     lintOptions {
         checkReleaseBuilds false
         abortOnError false
+    }
+
+    //渠道Flavors，我这里写了一些常用的
+    productFlavors {
+        commonsoon {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "commonsoon"]
+        }
+        zhushou91 {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "zhushou91"]
+        }
+    }
+    allprojects {
+        repositories {
+            mavenCentral()
+            maven { url "https://jitpack.io" }
+        }
+    }
+
+    //修改生成的apk名字
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def newName
+            def timeNow
+            def oldFile = output.outputFile
+            def outDirectory = oldFile.parent
+
+            if ("true".equals(IS_JENKINS)) {
+                timeNow = JENKINS_TIME
+                outDirectory = 'app/build/outputs/**'
+                newName = 'yj-android-v' +
+                        APP_VERSION + '-' + variant.productFlavors[0].name + timeNow + '-' + variant.buildType.name + '.apk'
+            } else {
+                timeNow = getDate()
+                if (variant.buildType.name.equals('debug')) {
+                    newName = "yj-android-v${APP_VERSION}-debug.apk"
+                } else {
+                    newName = 'yj-android-v' +
+                            APP_VERSION + '-' + variant.productFlavors[0].name + timeNow + '-' + variant.buildType.name + '.apk'
+                }
+            }
+
+            output.outputFile = new File(outDirectory, newName)
+
+        }
     }
 }
 
