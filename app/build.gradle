@@ -16,7 +16,7 @@ android {
         signingConfig {
             keyAlias 'basemodule'
             keyPassword 'basemodule'
-            storeFile file('C:\\Users\\Administrator\\Documents\\AndroidFilePicker\\basemodule.jks')
+            storeFile file('C:/Users/Administrator/Documents/AndroidFilePicker/basemodule.jks')
             storePassword 'basemodule'
         }
     }
@@ -69,8 +69,8 @@ android {
 
     //渠道Flavors，我这里写了一些常用的
     productFlavors {
-        commonsoon {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "commonsoon"]
+        qq {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "qq"]
         }
         zhushou91 {
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "zhushou91"]
@@ -93,15 +93,15 @@ android {
 
             if ("true".equals(IS_JENKINS)) {
                 timeNow = JENKINS_TIME
-                outDirectory = 'app/build/outputs/**'
-                newName = 'yj-android-v' +
+                outDirectory = 'C:/Users/Administrator/Desktop'
+                newName = 'filepicker-v' +
                         APP_VERSION + '-' + variant.productFlavors[0].name + timeNow + '-' + variant.buildType.name + '.apk'
             } else {
                 timeNow = getDate()
                 if (variant.buildType.name.equals('debug')) {
-                    newName = "yj-android-v${APP_VERSION}-debug.apk"
+                    newName = "filepicker-v${APP_VERSION}-debug.apk"
                 } else {
-                    newName = 'yj-android-v' +
+                    newName = 'filepicker-v' +
                             APP_VERSION + '-' + variant.productFlavors[0].name + timeNow + '-' + variant.buildType.name + '.apk'
                 }
             }
