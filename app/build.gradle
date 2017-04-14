@@ -67,7 +67,7 @@ android {
         abortOnError false
     }
 
-    //渠道Flavors，我这里写了一些常用的
+    //渠道Flavors
     productFlavors {
         qq {
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "qq"]
@@ -105,9 +105,7 @@ android {
                             APP_VERSION + '-' + variant.productFlavors[0].name + timeNow + '-' + variant.buildType.name + '.apk'
                 }
             }
-
             output.outputFile = new File(outDirectory, newName)
-
         }
     }
 }
