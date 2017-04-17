@@ -28,6 +28,7 @@ android {
 }
 
 dependencies {
+    //################## 系统级
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -37,12 +38,20 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
 
+    //################## 引入第三方jar包
+
+    //################## git上第三方库
     //=== [Glide](https://github.com/bumptech/glide)
     compile 'com.github.bumptech.glide:glide:3.7.0'
+
     //=== [PhotoView](https://github.com/chrisbanes/PhotoView)
     compile 'com.bm.photoview:library:1.4.1'
+
     //===
     compile 'pub.devrel:easypermissions:0.2.1'
+
     //=== [simplecropview](https://github.com/IsseiAoki/SimpleCropView)
     compile 'com.isseiaoki:simplecropview:1.0.13'
+
+    //################## 引用第三方工程
 }
