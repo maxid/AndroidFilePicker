@@ -12,7 +12,6 @@ import com.brilliant.androidfilepicker.video.VideoActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
