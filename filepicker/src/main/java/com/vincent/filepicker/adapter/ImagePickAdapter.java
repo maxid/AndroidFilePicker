@@ -56,7 +56,7 @@ public class ImagePickAdapter extends BaseAdapter<ImageFile, ImagePickAdapter.Im
 
     @Override
     public ImagePickViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(mContext).inflate(R.layout.layout_item_image_pick, parent, false);
+        View itemView = LayoutInflater.from(mContext).inflate(R.layout.filepicker_layout_item_image_pick, parent, false);
         ViewGroup.LayoutParams params = itemView.getLayoutParams();
         if (params != null) {
             WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);

@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/max_select_num"
-        android:textColor="@color/green"
-        android:textSize="@dimen/middle_text_size" />
+        android:textColor="@color/filepicker_green"
+        android:textSize="@dimen/filepicker_middle_text_size" />
 
     <include layout="@layout/layout_number" />
 
@@ -20,8 +20,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/isNeedRecorder"
-        android:textColor="@color/green"
-        android:textSize="@dimen/middle_text_size" />
+        android:textColor="@color/filepicker_green"
+        android:textSize="@dimen/filepicker_middle_text_size" />
 
     <RadioGroup
         android:id="@+id/show_camera"
@@ -29,8 +29,8 @@
         android:layout_height="wrap_content"
         android:checkedButton="@+id/camera_yes"
         android:orientation="horizontal"
-        android:paddingBottom="@dimen/margin_text"
-        android:paddingTop="@dimen/margin_text">
+        android:paddingBottom="@dimen/filepicker_margin_text"
+        android:paddingTop="@dimen/filepicker_margin_text">
 
         <RadioButton
             android:id="@+id/camera_yes"
@@ -43,7 +43,7 @@
             android:id="@+id/camera_no"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_text"
+            android:layout_marginLeft="@dimen/filepicker_margin_text"
             android:layout_weight="1.5"
             android:text="@string/no" />
     </RadioGroup>
@@ -51,11 +51,11 @@
     <Button
         android:id="@+id/video_selector"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/bar_height"
-        android:layout_marginTop="@dimen/margin_layout"
-        android:background="@drawable/btn_round_green_enable"
+        android:layout_height="@dimen/filepicker_bar_height"
+        android:layout_marginTop="@dimen/filepicker_margin_layout"
+        android:background="@drawable/filepicker_btn_round_green_enable"
         android:text="@string/select_picture"
-        android:textColor="@color/white"
-        android:textSize="@dimen/middle_text_size" />
+        android:textColor="@color/filepicker_white"
+        android:textSize="@dimen/filepicker_middle_text_size" />
 
 </LinearLayout>

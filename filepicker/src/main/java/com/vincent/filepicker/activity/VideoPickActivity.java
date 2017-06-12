@@ -90,7 +90,7 @@ public class VideoPickActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        setContentView(R.layout.activity_video_pick);
+        setContentView(R.layout.filepicker_activity_video_pick);
 
         mMaxNumber = getIntent().getIntExtra(EXTRA_MAX_SELECT_NUM, DEFAULT_MAX_NUMBER);
         isNeedCamera = getIntent().getBooleanExtra(EXTRA_SHOW_CAMERA, false);
@@ -174,7 +174,7 @@ public class VideoPickActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_image_pick, menu);
+        getMenuInflater().inflate(R.menu.filepicker_menu_image_pick, menu);
         return true;
     }
 

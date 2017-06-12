@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="50dp"
-    android:background="@color/xf_blue_color"
+    android:background="@color/filepicker_xf_blue_color"
     android:orientation="vertical">
 
     <LinearLayout
@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:src="@mipmap/ic_back" />
+            android:src="@mipmap/filepicker_ic_back" />
 
         <TextView
             android:id="@+id/title_size"

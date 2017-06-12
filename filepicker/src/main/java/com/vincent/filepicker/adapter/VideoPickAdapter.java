@@ -55,7 +55,7 @@ public class VideoPickAdapter extends BaseAdapter<VideoFile, VideoPickAdapter.Vi
 
     @Override
     public VideoPickAdapter.VideoPickViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(mContext).inflate(R.layout.layout_item_video_pick, parent, false);
+        View itemView = LayoutInflater.from(mContext).inflate(R.layout.filepicker_layout_item_video_pick, parent, false);
         ViewGroup.LayoutParams params = itemView.getLayoutParams();
         if (params != null) {
             WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);

@@ -63,7 +63,7 @@ public class ImageCropActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_image_crop);
+        setContentView(R.layout.filepicker_activity_image_crop);
         imageFile = getIntent().getParcelableExtra(EXTRA_PATH);
         sourceUri = Uri.fromFile(new File(imageFile.getPath()));
         initView();
@@ -178,7 +178,7 @@ public class ImageCropActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_image_crop, menu);
+        getMenuInflater().inflate(R.menu.filepicker_menu_image_crop, menu);
         return true;
     }
 
@@ -187,7 +187,7 @@ public class ImageCropActivity extends BaseActivity {
         int id = item.getItemId();
         if (id == R.id.action_done) {
             ProgressDialog.show(
-                    ImageCropActivity.this, null, getString(R.string.save_ing), true, false);
+                    ImageCropActivity.this, null, getString(R.string.filepicker_save_ing), true, false);
             saveUri = Uri.fromFile(FileUtils.createCropFile(ImageCropActivity.this));
             saveOutput(cropImageView.getCroppedBitmap());
             return true;

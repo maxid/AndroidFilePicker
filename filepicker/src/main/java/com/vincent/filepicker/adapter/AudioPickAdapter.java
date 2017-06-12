@@ -38,7 +38,7 @@ public class AudioPickAdapter extends BaseAdapter<AudioFile, AudioPickAdapter.Au
 
     @Override
     public AudioPickViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(mContext).inflate(R.layout.layout_item_audio_pick, parent, false);
+        View itemView = LayoutInflater.from(mContext).inflate(R.layout.filepicker_layout_item_audio_pick, parent, false);
         return new AudioPickViewHolder(itemView);
     }
 

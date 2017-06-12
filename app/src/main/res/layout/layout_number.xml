@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:paddingBottom="@dimen/margin_text"
-    android:paddingTop="@dimen/margin_text">
+    android:paddingBottom="@dimen/filepicker_margin_text"
+    android:paddingTop="@dimen/filepicker_margin_text">
 
     <ImageButton
         android:id="@+id/minus"

@@ -95,7 +95,7 @@ public class NormalFilePickActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
 
-        setContentView(R.layout.activity_file_pick);
+        setContentView(R.layout.filepicker_activity_file_pick);
 
         mMaxNumber = getIntent().getIntExtra(EXTRA_MAX_SELECT_NUM, DEFAULT_MAX_NUMBER);
         mSuffix = getIntent().getStringArrayExtra(EXTRA_STUFFIX);
@@ -125,7 +125,7 @@ public class NormalFilePickActivity extends BaseActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.addItemDecoration(new DividerListItemDecoration(this,
-                LinearLayoutManager.VERTICAL, R.drawable.divider_rv_file));
+                LinearLayoutManager.VERTICAL, R.drawable.filepicker_divider_rv_file));
         mAdapter = new NormalFilePickAdapter(this, mMaxNumber);
         mRecyclerView.setAdapter(mAdapter);
 
@@ -170,7 +170,7 @@ public class NormalFilePickActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_image_pick, menu);
+        getMenuInflater().inflate(R.menu.filepicker_menu_image_pick, menu);
         return true;
     }
 

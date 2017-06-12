@@ -128,7 +128,7 @@ public class ImagePickActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_image_pick);
+        setContentView(R.layout.filepicker_activity_image_pick);
 
         maxSelectNum = getIntent().getIntExtra(EXTRA_MAX_SELECT_NUM, DEFAULT_MAX_NUMBER);
         selectMode = getIntent().getIntExtra(EXTRA_SELECT_MODE, MODE_MULTIPLE);
@@ -250,7 +250,7 @@ public class ImagePickActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_image_pick, menu);
+        getMenuInflater().inflate(R.menu.filepicker_menu_image_pick, menu);
         return true;
     }
 

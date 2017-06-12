@@ -87,7 +87,7 @@ public class AudioPickActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        setContentView(R.layout.activity_audio_pick);
+        setContentView(R.layout.filepicker_activity_audio_pick);
         mMaxNumber = getIntent().getIntExtra(EXTRA_MAX_SELECT_NUM, DEFAULT_MAX_NUMBER);
         isNeedRecorder = getIntent().getBooleanExtra(IS_NEED_RECORDER, false);
         initView();
@@ -110,7 +110,7 @@ public class AudioPickActivity extends BaseActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.addItemDecoration(new DividerListItemDecoration(this,
-                LinearLayoutManager.VERTICAL, R.drawable.divider_rv_file));
+                LinearLayoutManager.VERTICAL, R.drawable.filepicker_divider_rv_file));
         mAdapter = new AudioPickAdapter(this, mMaxNumber);
         mRecyclerView.setAdapter(mAdapter);
 
@@ -163,7 +163,7 @@ public class AudioPickActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_audio_pick, menu);
+        getMenuInflater().inflate(R.menu.filepicker_menu_audio_pick, menu);
         menu.findItem(R.id.action_record).setVisible(isNeedRecorder);
         return true;
     }

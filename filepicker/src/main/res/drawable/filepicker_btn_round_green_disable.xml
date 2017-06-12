@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/filepicker_green_70"></solid>
+    <corners android:radius="@dimen/filepicker_btn_radius"></corners>
+    <padding android:left="@dimen/filepicker_margin_text" android:right="@dimen/filepicker_margin_text"></padding>
+</shape>

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/BgItem">
+    android:background="@color/filepicker_BgItem">
 
     <ImageView
         android:id="@+id/iv_thumbnail"
@@ -15,14 +15,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:src="@mipmap/ic_camera"
+        android:src="@mipmap/filepicker_ic_camera"
         android:visibility="invisible" />
 
     <View
         android:id="@+id/shadow"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/ShadowItem"
+        android:background="@color/filepicker_ShadowItem"
         android:visibility="invisible" />
 
     <ImageView
@@ -31,9 +31,29 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
         android:layout_marginTop="5dp"
-        android:src="@drawable/selector_cbx" />
+        android:src="@drawable/filepicker_selector_cbx" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/layout_duration"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="20dp"
+        android:background="@color/filepicker_ShadowItem">
+
+        <TextView
+            android:id="@+id/txt_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:textColor="#FFFFFF"
+            android:text="08:00"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

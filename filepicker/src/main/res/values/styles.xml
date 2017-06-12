@@ -2,12 +2,12 @@
 
     <style name="FilePickerTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/filepicker_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/filepicker_colorPrimaryDark</item>
+        <item name="colorAccent">@color/filepicker_colorAccent</item>
 
         <!-- 控制ToolBar右侧Menu弹出的位置 -->
-        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+        <item name="actionOverflowMenuStyle">@style/filepicker_OverflowMenuStyle</item>
 
         <!-- 单独配置ToolBar右侧Menu按钮即三个小圆点的颜色 -->
         <!--<item name="colorControlNormal">#FFFFFF</item>-->
@@ -16,11 +16,11 @@
         <item name="android:textColorPrimary">#FFFFFF</item>
 
         <!-- RecyclerView分割线 -->
-        <item name="android:listDivider">@drawable/divider_rv</item>
+        <item name="android:listDivider">@drawable/filepicker_divider_rv</item>
     </style>
 
     <!-- ToolBar菜单弹出样式 -->
-    <style name="OverflowMenuStyle" parent="@style/Widget.AppCompat.PopupMenu.Overflow">
+    <style name="filepicker_OverflowMenuStyle" parent="@style/Widget.AppCompat.PopupMenu.Overflow">
         <!-- 是否覆盖锚点，默认为true，即盖住Toolbar -->
         <item name="overlapAnchor">false</item>
         <!-- 弹出层背景颜色 -->
@@ -32,14 +32,14 @@
     </style>
 
     <!-- ToolBar菜单样式 -->
-    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <style name="filepicker_ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
         <!-- 非溢出菜单字体颜色，想要修改溢出菜单内的字体颜色只能直接设置textColorPrimary但此选项会影响Title的颜色-->
         <!--<item name="actionMenuTextColor">#FFFFFF</item>-->
         <item name="android:textSize">16sp</item> <!-- 字体大小 -->
     </style>
 
-    <style name="MyToolbar" parent="android:Widget">
-        <item name="titleTextAppearance">@style/ToolBarTitle</item>
+    <style name="filepicker_MyToolbar" parent="android:Widget">
+        <item name="titleTextAppearance">@style/filepicker_ToolBarTitle</item>
         <!--<item name="subtitleTextAppearance">@style/TextAppearance.Widget.AppCompat.Toolbar.Subtitle</item>-->
         <item name="android:minHeight">48dp</item>
         <item name="titleMargins">4dp</item>
@@ -50,9 +50,9 @@
         <!--<item name="android:paddingLeft">@dimen/abc_action_bar_default_padding_start_material</item>-->
         <!--<item name="android:paddingRight">@dimen/abc_action_bar_default_padding_end_material</item>-->
     </style>
-    <style name="ToolBarTitle" parent="android:Widget">
+    <style name="filepicker_ToolBarTitle" parent="android:Widget">
         <item name="android:textSize">19sp</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/filepicker_white</item>
     </style>
 
 </resources>

@@ -1,19 +1,15 @@
 package com.vincent.filepicker.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.vincent.filepicker.R;
 import com.vincent.filepicker.Util;
-import com.vincent.filepicker.filter.entity.AudioFile;
 import com.vincent.filepicker.filter.entity.NormalFile;
 
 import java.util.ArrayList;
@@ -39,7 +35,7 @@ public class NormalFilePickAdapter extends BaseAdapter<NormalFile, NormalFilePic
 
     @Override
     public NormalFilePickViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(mContext).inflate(R.layout.layout_item_normal_file_pick, parent, false);
+        View itemView = LayoutInflater.from(mContext).inflate(R.layout.filepicker_layout_item_normal_file_pick, parent, false);
         return new NormalFilePickViewHolder(itemView);
     }
 
@@ -63,17 +59,17 @@ public class NormalFilePickAdapter extends BaseAdapter<NormalFile, NormalFilePic
         }
 
         if (file.getPath().endsWith("xls") || file.getPath().endsWith("xlsx")) {
-            holder.mIvIcon.setImageResource(R.mipmap.ic_excel);
+            holder.mIvIcon.setImageResource(R.mipmap.filepicker_ic_excel);
         } else if (file.getPath().endsWith("doc") || file.getPath().endsWith("docx")){
-            holder.mIvIcon.setImageResource(R.mipmap.ic_word);
+            holder.mIvIcon.setImageResource(R.mipmap.filepicker_ic_word);
         } else if (file.getPath().endsWith("ppt") || file.getPath().endsWith("pptx")){
-            holder.mIvIcon.setImageResource(R.mipmap.ic_ppt);
+            holder.mIvIcon.setImageResource(R.mipmap.filepicker_ic_ppt);
         } else if (file.getPath().endsWith("pdf")){
-            holder.mIvIcon.setImageResource(R.mipmap.ic_pdf);
+            holder.mIvIcon.setImageResource(R.mipmap.filepicker_ic_pdf);
         } else if (file.getPath().endsWith("txt")){
-            holder.mIvIcon.setImageResource(R.mipmap.ic_txt);
+            holder.mIvIcon.setImageResource(R.mipmap.filepicker_ic_txt);
         } else {
-            holder.mIvIcon.setImageResource(R.mipmap.ic_file);
+            holder.mIvIcon.setImageResource(R.mipmap.filepicker_ic_file);
         }
 
         holder.mCbx.setOnClickListener(new View.OnClickListener() {
