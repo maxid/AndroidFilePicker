@@ -37,7 +37,7 @@ Add it in your root build.gradle at the end of repositories:
 
 3) 图片选择 
 
-```java
+```
 int mode = selectMode.getCheckedRadioButtonId() == R.id.mode_multiple ? ImagePickActivity.MODE_MULTIPLE : ImagePickActivity.MODE_SINGLE;
 boolean isShow = showCamera.getCheckedRadioButtonId() == R.id.camera_yes ? true : false;
 boolean isPreview = enablePreview.getCheckedRadioButtonId() == R.id.preview_enable ? true : false;
@@ -47,7 +47,7 @@ ImagePickActivity.start(ImageActivity.this, maxSelectNum, mode, isShow, isPrevie
 ```
 same this
 
-```java
+```
     /**
      * 启动图片选择页面
      *
@@ -72,7 +72,7 @@ same this
 ```
  Receive result in your onActivityResult Method
 
-``` java
+```
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == ImagePickActivity.REQUEST_IMAGE) {
@@ -83,14 +83,13 @@ same this
 ```
 4) 视频选择 
 
-```java
+```
 boolean isShow = showCamera.getCheckedRadioButtonId() == R.id.camera_yes ? true : false;
-
 VideoPickActivity.start(VideoActivity.this, maxSelectNum, isShow,VideoPickActivity.REQUEST_VIDEO);
 ```
 same this
 
-```java
+```
        /**
       * 启动视频选择
       *
@@ -108,7 +107,7 @@ same this
 ```
  Receive result in your onActivityResult Method
 
-``` java
+``` 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == VideoPickActivity.REQUEST_VIDEO) {
@@ -120,14 +119,13 @@ same this
 
 5) 文件选择 
 
-```java
+```
 String[] mSuffix = {"txt"};
-
 NormalFilePickActivity.start(FileActivity.this, maxSelectNum, mSuffix, NormalFilePickActivity.REQUEST_FILE);
 ```
 same this
 
-```java
+```
     /**
      * 启动文件选择
      *
@@ -145,7 +143,7 @@ same this
 ```
  Receive result in your onActivityResult Method
 
-``` java
+``` 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == NormalFilePickActivity.REQUEST_FILE) {
@@ -157,14 +155,13 @@ same this
 
 5) 音频选择 
 
-```java
+```
 boolean isNeedRecorder = showCamera.getCheckedRadioButtonId() == R.id.camera_yes ? true : false;
-
 AudioPickActivity.start(AudioActivity.this, maxSelectNum, isNeedRecorder, AudioPickActivity.REQUEST_AUDIO);
 ```
 same this
 
-```java
+```
     /**
      * 启动录音选择
      *
@@ -182,7 +179,7 @@ same this
 ```
  Receive result in your onActivityResult Method
 
-``` java
+```
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == AudioPickActivity.REQUEST_AUDIO) {
@@ -196,13 +193,10 @@ same this
     
 [Glide](https://github.com/bumptech/glide)
 compile 'com.github.bumptech.glide:glide:3.7.0'
-
 [PhotoView](https://github.com/chrisbanes/PhotoView)
 compile 'com.bm.photoview:library:1.4.1'
-    
 //===
 compile 'pub.devrel:easypermissions:0.2.1'
-
 [simplecropview](https://github.com/IsseiAoki/SimpleCropView)
 compile 'com.isseiaoki:simplecropview:1.0.13'
 
